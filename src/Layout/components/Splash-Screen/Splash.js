@@ -5,38 +5,23 @@ const Splash = () => {
   return (
     <div className="splash-screen">
       <div
-        className="load-spinner"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "80vh",
-        }}
+        className="load-spinner d-flex justify-content-center align-items-center w-100 h-50"
+
+        // style={{
+        //   display: "flex",
+        //   justifyContent: "center",
+        //   alignItems: "center",
+        //   width: "100%",
+        //   height: "80vh",
+        // }}
       >
-        <img src="./logo.png" style={{ width: "50%" }} alt="" />
+        <img src="./logo.png" className="w-50" alt="" />
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-        }}
-      ></div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-        }}
-      >
+
+      <div className="d-flex justify-content-center align-items-center w-100">
         <HashLoader size={50} color="#0090ba" />
       </div>
-      <div style={{ textAlign: "center", fontSize: "30px" }}>
-        Dev: Nourhan Elfaioumy
-      </div>
+      <div className="text-center fs-2">Dev: Nourhan Elfaioumy</div>
     </div>
   );
 };

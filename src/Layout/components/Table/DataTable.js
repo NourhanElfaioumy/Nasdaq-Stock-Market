@@ -61,7 +61,7 @@ export default function DataTable({ tickers, loading, posts }) {
   return (
     <div id="data-table">
       <div className="container">
-        <h3 className="title text-center mt-5" id="stocks-title">
+        <h3 className="text-center mt-5 text-capitalize" id="stocks-title">
           Stocks List
         </h3>
         <Table striped bordered hover>
