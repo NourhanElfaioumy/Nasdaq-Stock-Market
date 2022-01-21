@@ -11,8 +11,6 @@ const ModalDetails = ({
   tickerDetails,
   marketDetails,
 }) => {
-  console.log(marketDetails);
-  console.log(tickerDetails);
   return (
     <Modal
       show={showModal}
