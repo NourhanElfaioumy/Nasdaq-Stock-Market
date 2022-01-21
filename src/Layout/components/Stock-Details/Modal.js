@@ -1,9 +1,8 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
+import PropagateLoader from "react-spinners";
 
 // styles
-// import "../styles/Modal.scss";
-
 import ModalStyle from "../styles/ModalStyle";
 
 const ModalDetails = ({
@@ -24,12 +23,16 @@ const ModalDetails = ({
       <hr />
       <div className="d-flex justify-content-around">
         <img
-          size="medium"
+          className="img-fluid col-3"
           alt="Logo"
-
-          // src={tickerDetails.branding.logo_url}
+          src={
+            tickerDetails.branding
+              ? tickerDetails.branding.logo_url +
+                "?apiKey=OOWQ66Cs3CQUK2c4nRkCR7AGojELcpVg"
+              : "./loading.gif"
+          }
         />
-        <h5>Ticker : {tickerDetails.ticker}</h5>
+        <h5 className="mt-4">Ticker : {tickerDetails.ticker}</h5>
       </div>
       <hr />
       <div className="px-5">

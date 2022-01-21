@@ -26,21 +26,19 @@ export default function DataTable({ tickers, loading, posts }) {
       const { data } = await axios.get(url);
       if (data) {
         setTickerDetails(data.results);
+
         let firstDetails = JSON.stringify(data.results);
         localStorage.setItem(`${ticker.ticker}Details`, firstDetails);
-        console.log(data);
-        console.log(data.results.list_date);
-        const url2 = `https://api.polygon.io/v1/open-close/${ticker.ticker}/2020-10-01?adjusted=true&apiKey=${process.env.REACT_APP_API_KEY}`;
+
+        const url2 = `https://api.polygon.io/v1/open-close/${ticker.ticker}/${data.results.list_date}?adjusted=true&apiKey=${process.env.REACT_APP_API_KEY}`;
         const data2 = await axios.get(url2);
         if (data2) setMarketDetails(data2.data);
+
         let details2 = JSON.stringify(data2.data);
         localStorage.setItem(`${ticker.ticker}Details2`, details2);
-
-        console.log(data2);
       }
     } catch (error) {
       console.log("error", error);
-      // return [];
     }
     setShowModal(true);
   };
